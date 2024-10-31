@@ -44,7 +44,7 @@ class ItemViewModel(
                     is NetworkResult.Success -> {
                         _itemState.value =
                             ItemState(items = result.data.filter { it.name.isNotBlank() }
-                                .sortedWith(compareBy({ it.listId }, { it.name }))
+                                .sortedWith(compareBy({ it.listId }, { it.name.extractNumber() }))
                                 .groupBy { it.listId }, isLoading = false, errorMessage = null)
                     }
                 }
@@ -56,5 +56,10 @@ class ItemViewModel(
         _itemState.value = ItemState(
             isLoading = false, items = null, errorMessage = errorMessage
         )
+    }
+
+    // Helper extension function to extract the numeric part of the name
+    private fun String.extractNumber(): Int {
+        return this.filter { it.isDigit() }.toIntOrNull() ?: Int.MAX_VALUE
     }
 }

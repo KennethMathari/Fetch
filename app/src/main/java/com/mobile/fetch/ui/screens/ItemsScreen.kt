@@ -14,6 +14,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.mobile.fetch.domain.model.ItemDomain
 import com.mobile.fetch.ui.component.Loading
@@ -66,7 +67,8 @@ fun ListGroup(listId: Int, items: List<ItemDomain>) {
         Text(
             text = "List ID: $listId",
             style = MaterialTheme.typography.titleMedium,
-            modifier = Modifier.padding(vertical = 4.dp)
+            modifier = Modifier.padding(4.dp),
+            fontSize = 20.sp
         )
         items.forEach { item ->
             ItemRow(item = item)
