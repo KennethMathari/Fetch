@@ -36,4 +36,7 @@ Other dependencies are listed in the build.gradle files.
 The project follows the MVI (Model-View-Intent) architecture
 
 ## App Demo
-![img.png](img.png)
+
+
+> [](https://github.com/user-attachments/assets/48f2553c-2d47-43d7-ad4e-3c9f58a4b0ed)
+
